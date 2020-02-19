@@ -31,6 +31,11 @@ public class CardViewClass extends CardView{
         this.button2 = button2;
     }
 
+    public CardViewClass(@NonNull Context context) {
+        super( context );
+        inflate( context, R.layout.card_view_layout, null );
+    }
+
 
 
     public CardViewClass(@NonNull Context context, @Nullable AttributeSet attrs) {
@@ -41,12 +46,26 @@ public class CardViewClass extends CardView{
         super( context, attrs, defStyleAttr );
     }
 
-    public void makeAlertDialog(Context context){
+    public void makeAlertDialog(Context context, String title, String message, String button1, String button2){
         View cardView = LayoutInflater.from( context ).inflate( R.layout.card_view_layout, null );
-        TextView textView = cardView.findViewById( R.id.messagetv );
         TextView titleTV = cardView.findViewById( R.id.titleTv );
+        TextView messageTV = cardView.findViewById( R.id.messagetv );
         Button cancelButton = cardView.findViewById( R.id.cancelbutton );
         Button sendButton = cardView.findViewById( R.id.sendButton );
+
+        titleTV.setText( "" + title );
+        if (title.isEmpty())
+            titleTV.setVisibility( GONE );
+        messageTV.setText( "" + message );
+        if (message.isEmpty())
+            messageTV.setVisibility( GONE );
+        cancelButton.setText( "" + button1 );
+        if (button1.isEmpty())
+            cancelButton.setVisibility( GONE );
+        sendButton.setText( "" + button2 );
+        if (button2.isEmpty())
+            sendButton.setVisibility( GONE );
+
         AlertDialog alertDialog = new AlertDialog.Builder( context )
                 .setView( cardView )
                 .show();

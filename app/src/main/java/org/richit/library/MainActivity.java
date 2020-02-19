@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.richit.siemenscardviewlibrary.CardViewClass;
 
@@ -42,7 +43,11 @@ public class MainActivity extends AppCompatActivity {
         message = messageEditText.getText().toString();
         button1 = button1EditText.getText().toString();
         button2 = button2EditText.getText().toString();
+        if (title.isEmpty() && message.isEmpty() && button1.isEmpty() && button2.isEmpty()){
+            Toast.makeText( this, "Nothing to show", Toast.LENGTH_SHORT ).show();
+        }else {
+            cardViewClass.makeAlertDialog( this, "" + title, "" + message, "" + button1, "" + button2 );
+        }
 
-        cardViewClass.makeAlertDialog( this );
     }
 }
