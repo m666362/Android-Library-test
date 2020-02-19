@@ -3,9 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="16dp"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:id="@+id/titleET"
+        android:hint="Enter title"
+        android:layout_alignParentTop="true"
+        android:gravity="center"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_margin="4dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/messageET"
+        android:hint="Enter message"
+        android:layout_below="@id/titleET"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1Et"
+        android:layout_margin="4dp"
+        android:hint="Button Title 1"
+        android:layout_below="@id/messageET"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2ET"
+        android:layout_margin="4dp"
+        android:hint="Button Title 2"
+        android:layout_below="@id/button1Et"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/showDialogButton"
+        android:text="Show Dialog"
+        android:layout_alignParentBottom="true"
+        android:onClick="showDialogButton"/>
 
 </RelativeLayout>

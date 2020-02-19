@@ -2,6 +2,8 @@ package org.richit.siemenscardviewlibrary;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,13 +35,14 @@ public class CardViewClass extends CardView{
     public void makeAlertDialog(Context context){
         View cardView = LayoutInflater.from( context ).inflate( R.layout.card_view_layout, null );
         TextView textView = cardView.findViewById( R.id.messagetv );
+        TextView titleTV = cardView.findViewById( R.id.titleTv );
         Button cancelButton = cardView.findViewById( R.id.cancelbutton );
         Button sendButton = cardView.findViewById( R.id.sendButton );
-        new AlertDialog.Builder( context )
-                .setTitle( "Title" )
-                .setMessage( "Message" )
+        AlertDialog alertDialog = new AlertDialog.Builder( context )
                 .setView( cardView )
                 .show();
+
+        alertDialog.getWindow().setBackgroundDrawable( new ColorDrawable( Color.TRANSPARENT ) );
     }
 
 }
