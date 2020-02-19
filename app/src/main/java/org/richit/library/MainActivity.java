@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
     EditText messageEditText;
     EditText button1EditText;
     EditText button2EditText;
+    String title;
+    String message;
+    String button1;
+    String button2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -33,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showDialogButton(View view) {
+        title = titleEditText.getText().toString();
+        message = messageEditText.getText().toString();
+        button1 = button1EditText.getText().toString();
+        button2 = button2EditText.getText().toString();
+
         cardViewClass.makeAlertDialog( this );
     }
 }

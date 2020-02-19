@@ -17,12 +17,21 @@ import androidx.cardview.widget.CardView;
 public class CardViewClass extends CardView{
 
     Context context;
+    String title;
     String message;
+    String button1;
+    String button2;
 
-    public CardViewClass(@NonNull Context context) {
+    public CardViewClass(@NonNull Context context, String title, String message, String button1, String button2) {
         super( context );
         inflate( context, R.layout.card_view_layout, null );
+        this.title = title;
+        this.message = message;
+        this.button1 = button1;
+        this.button2 = button2;
     }
+
+
 
     public CardViewClass(@NonNull Context context, @Nullable AttributeSet attrs) {
         super( context, attrs );
