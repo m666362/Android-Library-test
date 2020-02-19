@@ -46,7 +46,17 @@ public class MainActivity extends AppCompatActivity {
         if (title.isEmpty() && message.isEmpty() && button1.isEmpty() && button2.isEmpty()){
             Toast.makeText( this, "Nothing to show", Toast.LENGTH_SHORT ).show();
         }else {
-            cardViewClass.makeAlertDialog( this, "" + title, "" + message, "" + button1, "" + button2 );
+            cardViewClass.makeAlertDialog( this, "" + title, "" + message, "" + button1, "" + button2, new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    cardViewClass.dismissAlertDialog();
+                }
+            }, new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    cardViewClass.makeToast();
+                }
+            } );
         }
 
     }
