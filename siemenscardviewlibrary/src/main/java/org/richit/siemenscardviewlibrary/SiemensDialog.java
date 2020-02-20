@@ -39,32 +39,43 @@ public class SiemensDialog extends CardView {
     }
 
     public SiemensDialog setTitle(String title){
-        titleTV = cardView.findViewById( R.id.titleTv );
-        titleTV.setVisibility( VISIBLE );
-        titleTV.setText( title );
+        if(!title.isEmpty()){
+            titleTV = cardView.findViewById( R.id.titleTv );
+            titleTV.setVisibility( VISIBLE );
+            titleTV.setText( title );
+        }
         return this;
     }
 
     public SiemensDialog setMessage(String message){
-        messageTV = cardView.findViewById( R.id.messagetv );
-        messageTV.setVisibility( VISIBLE );
-        messageTV.setText( message );
+        if (!message.isEmpty()){
+            messageTV = cardView.findViewById( R.id.messagetv );
+            messageTV.setVisibility( VISIBLE );
+            messageTV.setText( message );
+
+        }
         return this;
     }
 
     public SiemensDialog setCancelButton(String cancelButtonText, OnClickListener onClickListener){
-        cancelButton = cardView.findViewById( R.id.cancelbutton );
-        cancelButton.setVisibility( VISIBLE );
-        cancelButton.setText( cancelButtonText );
-        cancelButton.setOnClickListener( onClickListener );
+        if (!cancelButtonText.isEmpty()){
+            cancelButton = cardView.findViewById( R.id.cancelbutton );
+            cancelButton.setVisibility( VISIBLE );
+            cancelButton.setText( cancelButtonText );
+            cancelButton.setOnClickListener( onClickListener );
+
+        }
         return this;
     }
 
     public SiemensDialog setSendButton(String sendButtonText, OnClickListener onClickListener){
-        sendButton = cardView.findViewById( R.id.sendButton );
-        sendButton.setVisibility( VISIBLE );
-        sendButton.setText( sendButtonText );
-        sendButton.setOnClickListener( onClickListener );
+        if (!sendButtonText.isEmpty()){
+            sendButton = cardView.findViewById( R.id.sendButton );
+            sendButton.setVisibility( VISIBLE );
+            sendButton.setText( sendButtonText );
+            sendButton.setOnClickListener( onClickListener );
+
+        }
         return this;
     }
 

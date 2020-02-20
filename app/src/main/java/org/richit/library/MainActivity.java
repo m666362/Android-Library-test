@@ -48,7 +48,15 @@ public class MainActivity extends AppCompatActivity {
         }else {
 
             siemensDialog.setView()
-                    .setSendButton( "Send", new View.OnClickListener() {
+                    .setTitle( titleText )
+                    .setMessage( messageText )
+                    .setCancelButton( cancelButtonText, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            siemensDialog.dismissAlertDialog();
+                        }
+                    } )
+                    .setSendButton( sendButtonText, new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             siemensDialog.makeToast();
