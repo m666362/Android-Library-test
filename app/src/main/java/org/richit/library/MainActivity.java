@@ -7,19 +7,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.richit.siemenscardviewlibrary.CustomAlertDialog;
+import org.richit.siemenscardviewlibrary.SiemensDialog;
 
 public class MainActivity extends AppCompatActivity {
 
-    CustomAlertDialog customAlertDialog;
+    SiemensDialog siemensDialog;
     EditText titleEditText;
     EditText messageEditText;
-    EditText button1EditText;
-    EditText button2EditText;
-    String title;
-    String message;
-    String button1;
-    String button2;
+    EditText cancelButtonET;
+    EditText sendButtonET;
+    String titleText;
+    String messageText;
+    String cancelButtonText;
+    String sendButtonText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,30 +31,30 @@ public class MainActivity extends AppCompatActivity {
 
     private void initObject() {
 
-        customAlertDialog = new CustomAlertDialog( this );
+        siemensDialog = new SiemensDialog( this );
         titleEditText = findViewById( R.id.titleET);
         messageEditText = findViewById( R.id.messageET);
-        button1EditText = findViewById( R.id.button1Et);
-        button2EditText = findViewById( R.id.button2ET );
+        cancelButtonET = findViewById( R.id.button1Et);
+        sendButtonET = findViewById( R.id.button2ET );
     }
 
     public void showDialogButton(View view) {
-        title = titleEditText.getText().toString();
-        message = messageEditText.getText().toString();
-        button1 = button1EditText.getText().toString();
-        button2 = button2EditText.getText().toString();
-        if (title.isEmpty() && message.isEmpty() && button1.isEmpty() && button2.isEmpty()){
+        titleText = titleEditText.getText().toString();
+        messageText = messageEditText.getText().toString();
+        cancelButtonText = cancelButtonET.getText().toString();
+        sendButtonText = sendButtonET.getText().toString();
+        if (titleText.isEmpty() && messageText.isEmpty() && cancelButtonText.isEmpty() && sendButtonText.isEmpty()){
             Toast.makeText( this, "Nothing to show", Toast.LENGTH_SHORT ).show();
         }else {
-            customAlertDialog.makeAlertDialog( this, "" + title, "" + message, "" + button1, "" + button2, new View.OnClickListener() {
+            siemensDialog.makeAlertDialog( this, "" + titleText, "" + messageText, "" + cancelButtonText, "" + sendButtonText, new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    customAlertDialog.dismissAlertDialog();
+                    siemensDialog.dismissAlertDialog();
                 }
             }, new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    customAlertDialog.makeToast();
+                    siemensDialog.makeToast();
                 }
             } );
         }

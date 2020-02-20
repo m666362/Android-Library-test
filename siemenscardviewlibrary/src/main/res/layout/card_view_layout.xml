@@ -34,13 +34,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
+            android:layout_marginHorizontal="8dp"
             android:layout_marginVertical="8dp"
             android:padding="8dp"
             android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"/>
+
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/cancelbutton"
@@ -48,7 +53,7 @@
                 android:text="Cancel"/>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"

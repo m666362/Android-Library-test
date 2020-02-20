@@ -15,36 +15,36 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 
-public class CustomAlertDialog extends CardView {
+public class SiemensDialog extends CardView {
 
     Context context;
-    String title;
-    String message;
-    String button1;
-    String button2;
+    String titleText;
+    String messageText;
+    String sendButtonText;
+    String cancelButtonText;
     AlertDialog alertDialog;
 
-    public CustomAlertDialog(@NonNull Context context, String title, String message, String button1, String button2) {
+    public SiemensDialog(@NonNull Context context, String title, String message, String sendButtonText, String cancelButtonText) {
         super( context );
         inflate( context, R.layout.card_view_layout, null );
-        this.title = title;
-        this.message = message;
-        this.button1 = button1;
-        this.button2 = button2;
+        this.titleText = title;
+        this.messageText = message;
+        this.sendButtonText = sendButtonText;
+        this.cancelButtonText = cancelButtonText;
     }
 
-    public CustomAlertDialog(@NonNull Context context) {
+    public SiemensDialog(@NonNull Context context) {
         super( context );
         this.context = context;
         inflate( context, R.layout.card_view_layout, null );
     }
 
 
-    public CustomAlertDialog(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SiemensDialog(@NonNull Context context, @Nullable AttributeSet attrs) {
         super( context, attrs );
     }
 
-    public CustomAlertDialog(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SiemensDialog(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super( context, attrs, defStyleAttr );
     }
 
