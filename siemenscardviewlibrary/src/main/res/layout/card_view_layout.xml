@@ -19,6 +19,7 @@
             android:textStyle="bold"
             android:textSize="24sp"
             android:text="Title"
+            android:visibility="gone"
             android:layout_marginHorizontal="8dp"
             android:padding="16dp"
             android:id="@+id/titleTv"/>
@@ -27,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Displaying message"
+            android:visibility="gone"
             android:layout_marginHorizontal="8dp"
             android:padding="16dp"
             android:id="@+id/messagetv"/>
@@ -46,6 +48,7 @@
 
             <Button
                 android:layout_width="0dp"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/cancelbutton"
@@ -54,6 +57,7 @@
 
             <Button
                 android:layout_width="0dp"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"

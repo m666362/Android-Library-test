@@ -46,17 +46,15 @@ public class MainActivity extends AppCompatActivity {
         if (titleText.isEmpty() && messageText.isEmpty() && cancelButtonText.isEmpty() && sendButtonText.isEmpty()){
             Toast.makeText( this, "Nothing to show", Toast.LENGTH_SHORT ).show();
         }else {
-            siemensDialog.makeAlertDialog( this, "" + titleText, "" + messageText, "" + cancelButtonText, "" + sendButtonText, new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    siemensDialog.dismissAlertDialog();
-                }
-            }, new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    siemensDialog.makeToast();
-                }
-            } );
+
+            siemensDialog.setView()
+                    .setSendButton( "Send", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            siemensDialog.makeToast();
+                        }
+                    } )
+                    .build();
         }
 
     }
