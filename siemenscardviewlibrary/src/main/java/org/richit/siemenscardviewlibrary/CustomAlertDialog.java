@@ -15,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 
-public class CardViewClass extends CardView {
+public class CustomAlertDialog extends CardView {
 
     Context context;
     String title;
@@ -24,7 +24,7 @@ public class CardViewClass extends CardView {
     String button2;
     AlertDialog alertDialog;
 
-    public CardViewClass(@NonNull Context context, String title, String message, String button1, String button2) {
+    public CustomAlertDialog(@NonNull Context context, String title, String message, String button1, String button2) {
         super( context );
         inflate( context, R.layout.card_view_layout, null );
         this.title = title;
@@ -33,23 +33,25 @@ public class CardViewClass extends CardView {
         this.button2 = button2;
     }
 
-    public CardViewClass(@NonNull Context context) {
+    public CustomAlertDialog(@NonNull Context context) {
         super( context );
-        inflate( context, R.layout.card_view_layout, null );
         this.context = context;
+        inflate( context, R.layout.card_view_layout, null );
     }
 
 
-    public CardViewClass(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public CustomAlertDialog(@NonNull Context context, @Nullable AttributeSet attrs) {
         super( context, attrs );
     }
 
-    public CardViewClass(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CustomAlertDialog(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super( context, attrs, defStyleAttr );
     }
 
     public void makeAlertDialog(Context context, String title, String message, String button1, String button2, OnClickListener button1onClickListener, OnClickListener button2onClickListener) {
+
         View cardView = LayoutInflater.from( context ).inflate( R.layout.card_view_layout, null );
+
         TextView titleTV = cardView.findViewById( R.id.titleTv );
         TextView messageTV = cardView.findViewById( R.id.messagetv );
         Button cancelButton = cardView.findViewById( R.id.cancelbutton );

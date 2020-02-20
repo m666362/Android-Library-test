@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.richit.siemenscardviewlibrary.CardViewClass;
+import org.richit.siemenscardviewlibrary.CustomAlertDialog;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardViewClass cardViewClass;
+    CustomAlertDialog customAlertDialog;
     EditText titleEditText;
     EditText messageEditText;
     EditText button1EditText;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initObject() {
 
-        cardViewClass = new CardViewClass( this );
+        customAlertDialog = new CustomAlertDialog( this );
         titleEditText = findViewById( R.id.titleET);
         messageEditText = findViewById( R.id.messageET);
         button1EditText = findViewById( R.id.button1Et);
@@ -46,15 +46,15 @@ public class MainActivity extends AppCompatActivity {
         if (title.isEmpty() && message.isEmpty() && button1.isEmpty() && button2.isEmpty()){
             Toast.makeText( this, "Nothing to show", Toast.LENGTH_SHORT ).show();
         }else {
-            cardViewClass.makeAlertDialog( this, "" + title, "" + message, "" + button1, "" + button2, new View.OnClickListener() {
+            customAlertDialog.makeAlertDialog( this, "" + title, "" + message, "" + button1, "" + button2, new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    cardViewClass.dismissAlertDialog();
+                    customAlertDialog.dismissAlertDialog();
                 }
             }, new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    cardViewClass.makeToast();
+                    customAlertDialog.makeToast();
                 }
             } );
         }
