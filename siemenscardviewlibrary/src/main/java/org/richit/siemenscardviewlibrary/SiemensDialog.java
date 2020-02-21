@@ -18,14 +18,14 @@ import androidx.cardview.widget.CardView;
 public class SiemensDialog extends CardView {
 
     Context context;
-    AlertDialog alertDialog;
 
     View cardView;
-
     TextView titleTV ;
     TextView messageTV ;
     Button cancelButton ;
     Button sendButton ;
+
+    AlertDialog alertDialog;
 
     public SiemensDialog(@NonNull Context context) {
         super( context );
@@ -38,41 +38,44 @@ public class SiemensDialog extends CardView {
         return this;
     }
 
-    public SiemensDialog setTitle(String title){
+    public SiemensDialog setTitle(String title,int color){
         if(!title.isEmpty()){
             titleTV = cardView.findViewById( R.id.titleTv );
             titleTV.setVisibility( VISIBLE );
             titleTV.setText( title );
+            titleTV.setTextColor( color );
         }
         return this;
     }
 
-    public SiemensDialog setMessage(String message){
+    public SiemensDialog setMessage(String message,int color){
         if (!message.isEmpty()){
             messageTV = cardView.findViewById( R.id.messagetv );
             messageTV.setVisibility( VISIBLE );
             messageTV.setText( message );
-
+            messageTV.setTextColor( color );
         }
         return this;
     }
 
-    public SiemensDialog setCancelButton(String cancelButtonText, OnClickListener onClickListener){
+    public SiemensDialog setCancelButton(String cancelButtonText,int color, OnClickListener onClickListener){
         if (!cancelButtonText.isEmpty()){
             cancelButton = cardView.findViewById( R.id.cancelbutton );
             cancelButton.setVisibility( VISIBLE );
             cancelButton.setText( cancelButtonText );
+            cancelButton.setTextColor( color );
             cancelButton.setOnClickListener( onClickListener );
 
         }
         return this;
     }
 
-    public SiemensDialog setSendButton(String sendButtonText, OnClickListener onClickListener){
+    public SiemensDialog setSendButton(String sendButtonText,int color,  OnClickListener onClickListener){
         if (!sendButtonText.isEmpty()){
             sendButton = cardView.findViewById( R.id.sendButton );
             sendButton.setVisibility( VISIBLE );
             sendButton.setText( sendButtonText );
+            sendButton.setTextColor( color );
             sendButton.setOnClickListener( onClickListener );
 
         }

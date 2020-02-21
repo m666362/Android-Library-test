@@ -2,6 +2,7 @@ package org.richit.library;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -48,15 +49,15 @@ public class MainActivity extends AppCompatActivity {
         }else {
 
             siemensDialog.setView()
-                    .setTitle( titleText )
-                    .setMessage( messageText )
-                    .setCancelButton( cancelButtonText, new View.OnClickListener() {
+                    .setTitle( titleText, Color.GRAY )
+                    .setMessage( messageText, Color.BLACK )
+                    .setCancelButton( cancelButtonText, Color.RED, new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             siemensDialog.dismissAlertDialog();
                         }
                     } )
-                    .setSendButton( sendButtonText, new View.OnClickListener() {
+                    .setSendButton( sendButtonText, Color.GREEN,  new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             siemensDialog.makeToast();
